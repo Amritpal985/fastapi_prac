@@ -83,3 +83,61 @@ async def get_author_books(author:str):
         return "BOOKS not found"
     except Exception as e:
         return e 
+
+# project/
+# │── alembic/               # (if using Alembic for migrations)
+# │   └── versions/          
+# │
+# │── app/
+# │   ├── api/               # API routers
+# │   │   ├── users.py
+# │   │   ├── auth.py
+# │   │   ├── items.py
+# │   │   └── __init__.py
+# │   │
+# │   ├── core/              # Core config, security, logging
+# │   │   ├── config.py      # Settings via Pydantic (env vars)
+# │   │   ├── security.py    # JWT, password hashing
+# │   │   ├── logging.py
+# │   │   └── __init__.py
+# │   │
+# │   ├── db/                # Database setup
+# │   │   ├── base.py        # Base class for models
+# │   │   ├── session.py     # DB session
+# │   │   ├── init_db.py     # Populate default data
+# │   │   └── __init__.py
+# │   │
+# │   ├── models/            # SQLAlchemy models
+# │   │   ├── user.py
+# │   │   ├── item.py
+# │   │   └── __init__.py
+# │   │
+# │   ├── schemas/           # Pydantic schemas
+# │   │   ├── user.py
+# │   │   ├── item.py
+# │   │   └── __init__.py
+# │   │
+# │   ├── services/          # Business logic
+# │   │   ├── user_service.py
+# │   │   ├── auth_service.py
+# │   │   └── __init__.py
+# │   │
+# │   ├── utils/             # Helpers/utilities
+# │   │   ├── pagination.py
+# │   │   └── __init__.py
+# │   │
+# │   ├── main.py            # Entry point (FastAPI app instance)
+# │   └── __init__.py
+# │
+# │── tests/                 # Unit/integration tests
+# │   ├── api/
+# │   ├── models/
+# │   └── conftest.py
+# │
+# │── .env                   # Environment variables
+# │── .env.example           # Example env file
+# │── requirements.txt       # Dependencies (or pyproject.toml if using poetry)
+# │── Dockerfile             # Docker support
+# │── docker-compose.yml     # Optional (DB, cache, etc.)
+# │── alembic.ini            # Alembic config
+# │── README.md
