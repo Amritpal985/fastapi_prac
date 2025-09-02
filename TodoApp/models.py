@@ -15,6 +15,8 @@ class Users(Base):
     hashed_password = Column(String)
     is_active = Column(Boolean,default=True)
     role = Column(String)
+    phone_number = Column(String,unique=True,index=True)
+    # address = Column(String)
 
 # This create table in the database
 class Todos(Base):
